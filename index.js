@@ -64,9 +64,13 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
+function inning(){
     /*Code Here*/
+
+    return Math.floor(Math.random() * 3);
 }
+
+inning();
 
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
@@ -83,9 +87,28 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(inning, inningNumber){
+  
+  let homeScore = 0;
+  let awayScore = 0;
+
+  for (let i = 0; i < inningNumber; i++) {
+    homeScore = homeScore + inning();
+    awayScore = awayScore + inning();
+
+  }
+
+  return {
+    "Home" : homeScore,
+    "Away" : awayScore
+  }
+
+
 }
+
+console.log (finalScore(inning, 7));
+console.log (finalScore(inning, 8));
+console.log (finalScore(inning, 9));
 
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
@@ -101,10 +124,17 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
+function getInningScore(inning) {
   /*Your Code Here */
 
+  return {
+    "Home": inning(),
+    "Away": inning()
+  }
+
 }
+
+console.log (getInningScore(inning));
 
 
 /* STRETCH: ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
@@ -147,6 +177,8 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 10 - Home 10"
 ] */
 // NOTE: There is no test associated with this code; if your output matches the given example, consider it complete!
+
+
 function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
 }
